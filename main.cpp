@@ -36,16 +36,6 @@ struct Manager
         ifstream file("students.txt", ios::in);
         if (file.is_open()) 
         {
-            file.seekg(0, ios::end); // move to end
-            if (file.tellg() == 0) 
-            {
-                cout << "The file is empty!" << '\n';
-                file.close();
-                return; // or handle as needed
-            }
-
-            file.seekg(0, ios::beg);
-
             while (file >> this->students[count].name >> this->students[count].studentId >> this->students[count].course >> this->students[count].yearLevel >> this->students[count].finalGrade)
             {
                 for (int i = 0; i < this->students[count].name.length(); ++i)
