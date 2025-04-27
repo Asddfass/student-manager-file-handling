@@ -13,11 +13,12 @@ struct Student
     float finalGrade = 0.0;
 };
 
+// Struct to manage everything from functions to arrays
 struct Manager
 {
     Student students[100];
     int count = 0;
-
+    // CONSTRUCTOR TO CREATE FILE IF IT DOES NOT EXIST YET
     Manager()
     {
         ofstream file("students.txt", ios::app);
@@ -60,7 +61,7 @@ struct Manager
             cout << "Error Opening File!!!" << '\n';
         }
     }
-    // OPTION 1
+    // OPTION 1 ADD STUDENT
     void addStudent()
     {
         cout << "\n\t-ADD STUDENT-" << "\n\n";
@@ -134,7 +135,7 @@ struct Manager
         }
         getchPrompt();
     }
-    //OPTION 2
+    //OPTION 2 VIEW STUDENTS
     void viewAllStudents()
     {
         cout << "\n\t-VIEW STUDENT-" << "\n\n";
@@ -157,7 +158,7 @@ struct Manager
         }
         getchPrompt();
     }
-    // OPTION 3
+    // OPTION 3 SEARCH STUDENT
     void searchStudent()
     {
         cout << "\n\t-SEARCH STUDENT-" << "\n\n";
@@ -200,7 +201,7 @@ struct Manager
         }
         getchPrompt();
     }
-    // OPTION 4
+    // OPTION 4 UPDATE STUDENT
     void updateStudent()
     {
         cout << "\n\t-UPDATE STUDENT-" << "\n\n";
@@ -320,7 +321,7 @@ struct Manager
         }
         getchPrompt();
     }
-    // OPTION 5
+    // OPTION 5 DELETE STUDENT
     void deleteStudent()
     {
         cout << "\n\t-DELETE STUDENT-" << "\n\n";
