@@ -3,7 +3,7 @@
 #include <string>
 #include <conio.h>
 using namespace std;
-
+// STUDENT STRUCT
 struct Student 
 {
     string name = "";
@@ -13,7 +13,7 @@ struct Student
     float finalGrade = 0.0;
 };
 
-// Struct to manage everything from functions to arrays
+// STRUCT TO MANAGE EVERYTHING FROM FUNCTIONS TO ARRAYS
 struct Manager
 {
     Student students[100];
@@ -236,7 +236,7 @@ struct Manager
 
         bool running = true;
         char opt = ' ';
-        
+        // TO MAKE A COPY FOR WHEN UPDATING A STUDENT
         string newName = this->students[i].name;
         string newStudentId = this->students[i].studentId;
         string newCourse = this->students[i].course;
@@ -534,7 +534,7 @@ struct Manager
         getchUpdatePrompt();
         return finalGrade;
     }
-
+    // FUNCTION WHEN EXIT & SAVE UPDATE OPTION IS CHOSEN
     void updateStudentRecord(string name, string studentId, string course, int yearLevel, float finalGrade, int i)
     {
         this->students[i].name = name;
@@ -589,7 +589,7 @@ struct Manager
             cout << "Error Opening File!!!" << '\n';
         }
     }
-
+    // UPDATE MENU OPTION FOR WHEN UPDATING A STUDENT RECORD
     void displayUpdateMenu()
     {
         cout << "\n\t-UPDATE MENU-" << "\n\n";
@@ -603,7 +603,7 @@ struct Manager
         cout << "Enter Option: ";
     }
 
-    //GETCH PROMPT
+    // GETCH PROMPT AFTER EVERTY OPTION
     void getchUpdatePrompt()
     {
         cout << '\n' << "press any button to continue back to update menu..." << '\n';
@@ -613,7 +613,7 @@ struct Manager
         cout << '\n' << "press any button to continue back to main menu..." << '\n';
     }
 };
-
+// MENU PROMPT FUNCTION
 void drawMenu()
 {
     cout << "\n\tSTUDENT RECORD MANAGER" << '\n';
@@ -625,7 +625,7 @@ void drawMenu()
     cout << "6. Exit" << '\n';
     cout << "Enter Option: ";
 }
-
+// FUNCTION TO RUN EVERYTHING
 void run()
 {
     Manager manager;
