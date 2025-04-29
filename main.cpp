@@ -321,7 +321,34 @@ struct Manager
         }
         getchPrompt();
     }
-    // OPTION 5 DELETE STUDENT
+    // OPTION 5 VIEW PASS STUDENT
+    void viewPassedStudents()
+    {
+        cout << "\n\t-PASSED STUDENT-" << "\n\n";
+        if (this->count == 0)
+        {
+            cout << "STUDENT RECORD IS EMPTY!!!" << '\n';
+            getchPrompt();
+            return;
+        }
+        cout << "=======================================" << '\n';
+        for (int i = 0; i < this->count; ++i)
+        {
+            // CONDITION FOR STUDENT TO PASS >= 1 && <= 3
+            if (this->students[i].finalGrade >= 1.0 && this->students[i].finalGrade <= 3.0)
+            {
+                cout << "Student #" << i + 1 << '\n';
+                cout << "Name: " << this->students[i].name << '\n';
+                cout << "Student ID: " << this->students[i].studentId << '\n';
+                cout << "Course: " << this->students[i].course << '\n';
+                cout << "Year Level: " << this->students[i].yearLevel << '\n';
+                cout << "Final Grade: " << this->students[i].finalGrade << '\n';
+                cout << "=======================================" << '\n';
+            }
+        }
+        getchPrompt();
+    }
+    // OPTION 6 DELETE STUDENT
     void deleteStudent()
     {
         cout << "\n\t-DELETE STUDENT-" << "\n\n";
@@ -621,8 +648,9 @@ void drawMenu()
     cout << "2. View All Records" << '\n';
     cout << "3. Search Student by ID" << '\n';
     cout << "4. Update a Record" << '\n';
-    cout << "5. Delete a Record" << '\n';
-    cout << "6. Exit" << '\n';
+    cout << "5. View Passed Students" << '\n';
+    cout << "6. Delete a Record" << '\n';
+    cout << "7. Exit" << '\n';
     cout << "Enter Option: ";
 }
 // FUNCTION TO RUN EVERYTHING
@@ -671,11 +699,18 @@ void run()
         case '5':
         {
             system("cls");
-            manager.deleteStudent();
+            manager.viewPassedStudents();
             getch();
             break;
         }
         case '6':
+        {
+            system("cls");
+            manager.deleteStudent();
+            getch();
+            break;
+        }
+        case '7':
         {
             cout << "\n\nPress any button to exit... :)";
             running = false;
