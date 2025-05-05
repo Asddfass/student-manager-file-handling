@@ -321,10 +321,10 @@ struct Manager
         }
         getchPrompt();
     }
-    // OPTION 5 VIEW PASS STUDENT
+    // OPTION 5 VIEW PASSING STUDENT
     void viewPassedStudents()
     {
-        cout << "\n\t-PASSED STUDENT-" << "\n\n";
+        cout << "\n\t-PASSING STUDENT-" << "\n\n";
         if (this->count == 0)
         {
             cout << "STUDENT RECORD IS EMPTY!!!" << '\n';
@@ -332,6 +332,7 @@ struct Manager
             return;
         }
         cout << "=======================================" << '\n';
+        int passCount = 0;
         for (int i = 0; i < this->count; ++i)
         {
             // CONDITION FOR STUDENT TO PASS >= 1 && <= 3
@@ -344,7 +345,13 @@ struct Manager
                 cout << "Year Level: " << this->students[i].yearLevel << '\n';
                 cout << "Final Grade: " << this->students[i].finalGrade << '\n';
                 cout << "=======================================" << '\n';
+                passCount++;
             }
+        }
+        // IF THERE IS A STUDENT RECORD BUT NO ONE PASSED
+        if (passCount == 0 && this->count != 0)
+        {
+            cout << "NO PASSING STUDENT!!!" << '\n';
         }
         getchPrompt();
     }
