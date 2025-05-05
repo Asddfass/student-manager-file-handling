@@ -31,7 +31,7 @@ struct Manager
             cout << "Error Opening File!!!" << '\n';
         }
     }
-    //CHECKS FILE IF IT HAS DATA AND STORE IT IN THE ARRAY WHEN THE PROGRAM STARTS
+    // CHECKS FILE IF IT HAS DATA AND STORE IT IN THE ARRAY WHEN THE PROGRAM STARTS
     void checkFile()
     {
         ifstream file("students.txt", ios::in);
